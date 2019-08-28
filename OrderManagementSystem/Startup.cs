@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using OrderManagement.Common.UnitOfWork;
+using OrderManagementSystem.Middlewire;
 
 namespace OrderManagementSystem
 {
@@ -59,7 +60,7 @@ namespace OrderManagementSystem
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
-
+            app.UseErrorHandliing();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
